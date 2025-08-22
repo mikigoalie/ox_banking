@@ -63,7 +63,7 @@ const openAtm = async ({ entity }: { entity: number }) => {
   await sleep(0);
   await waitFor(() => GetSequenceProgress(cache.ped) === -1 || undefined, '', false);
 
-  PlaySoundFrontend(-1, 'PIN_BUTTON', 'ATM_SOUNDS', true);
+  PlaySoundFromEntity(-1, 'PIN_BUTTON', doAnim ? entity : cache.ped, 'ATM_SOUNDS', true, 0);
 
   isUiOpen = true;
   isATMopen = true;
